@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         // body: ["Playfair Display", ...defaultTheme.fontFamily.sans],
-        body: ["Poppins", ...defaultTheme.fontFamily.sans],
+        body: ["Questrial", ...defaultTheme.fontFamily.sans],
         dancing: ["Playfair Display", "cursive"],
       },
       backgroundImage: {
