@@ -72,7 +72,7 @@ export const Home = ({ setShowGallery }) => {
           of admission revenue. Artworks can be purchased in the NFT gift shop.
         </div>
       </div> */}
-      <div className="py-10 pr-40 flex border-t">
+      <div className="py-10 lg:pr-40 flex border-t">
         <div>
           <div className="uppercase font-bold text-3xl">
             FCK 2020 - A celebration of creativity in the face of adversity
