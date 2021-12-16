@@ -77,19 +77,19 @@ export const Home = ({ setShowGallery }) => {
           <div className="uppercase font-bold text-3xl">
             FCK 2020 - A celebration of creativity in the face of adversity
           </div>
-          <div className="">Curated by: H.P. Baxxter (Scooter)</div>
+          <div className="text-xl">Curated by: H.P. Baxxter (Scooter)</div>
           <div className="italic mt-5 mb-10">December 16th - January 31st</div>
-          <div className="italic mt-5">
+          <div className="italic mt-5 bg-black/60 p-6">
             Your ticket to an exclusive virtual exhibition curated by H.P.
             Baxxter of Hamburg rave group Scooter featuring the hottest artwork
             of 2021 from creatives across the Talenthouse and Ello Art sites.
           </div>
-          <div className=" mt-5">
+          <div className="mt-6">
             £10 Admission. 50% of all monies shared with featured Creatives
           </div>
         </div>
       </div>
-      <div className="flex justify-center mt-6 border-b pb-10">
+      <div className="flex flex-col items-center mt-5 border-b pb-10 mb-16">
         <button
           onClick={() => setVisible(true)}
           className="border px-6 py-4 font-bold hover:bg-white hover:text-black"

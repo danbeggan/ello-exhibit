@@ -13,10 +13,10 @@ function App() {
     <div
       className={`font-body ${
         showGallery ? "bg-white" : "bg-landing"
-      } bg-center min-h-screen h-full bg-cover text-white`}
+      } bg-center min-h-screen h-full bg-cover text-white flex`}
     >
       <div
-        className={`absolute inset-0 ${
+        className={`w-full h-full ${
           !showGallery && "bg-black/40"
         } flex flex-col`}
       >
