@@ -2,17 +2,62 @@ import React, { useState } from "react";
 
 import { Modal } from "components/Modal";
 
-import { Elements } from "@stripe/react-stripe-js";
+import { Elements, CardElement } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { PaymentElement } from "@stripe/react-stripe-js";
+
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(
   "pk_test_51K7GflCG8pk8NE3DpeqwjqqAlRoKXkTG3ArL8fBcpggnScVb9QhQbHlWo4x4hpehCgbkMLwLsecSnbc69YNHxrdB00QwnLGx5k"
 );
 
-export const Home = () => {
+export const Home = ({ setShowGallery }) => {
   const [visible, setVisible] = useState(false);
+  const [checkoutError, setCheckoutError] = useState();
+  const [isProcessing, setProcessingTo] = useState(false);
+
+  const handleCardDetailsChange = (ev) => {
+    ev.error ? setCheckoutError(ev.error.message) : setCheckoutError();
+  };
+
+  const handleFormSubmit = async (ev) => {
+    ev.preventDefault();
+    setProcessingTo(true);
+    setShowGallery(true);
+
+    if (!checkoutError) {
+      // If valid
+
+      setProcessingTo(false);
+    } else {
+      setProcessingTo(false);
+    }
+  };
+
+  const iframeStyles = {
+    base: {
+      color: "#fff",
+      fontSize: "16px",
+      iconColor: "#fff",
+      "::placeholder": {
+        color: "#fff",
+        border: "1px solid #FFF",
+      },
+    },
+    invalid: {
+      iconColor: "#FFC7EE",
+      color: "#FFC7EE",
+    },
+    complete: {
+      iconColor: "#cbf4c9",
+    },
+  };
+
+  const cardElementOpts = {
+    iconStyle: "solid",
+    style: iframeStyles,
+    hidePostalCode: true,
+  };
 
   return (
     <div>
@@ -54,7 +99,31 @@ export const Home = () => {
       </div>
       <Elements stripe={stripePromise}>
         <Modal setVisible={setVisible} visible={visible}>
-          payment form
+          <div className="mb-4 bold">Order summary</div>
+          <div className="flex justify-between mb-8">
+            <div>1 x General Admission</div>
+            <div>£10</div>
+          </div>
+          <form className="bg-black" onSubmit={handleFormSubmit}>
+            <CardElement
+              options={cardElementOpts}
+              onChange={handleCardDetailsChange}
+            />
+            <div className="flex flex-col items-center mt-10">
+              {checkoutError && false && (
+                <div className="mb-2" style={{ color: "#FFC7EE" }}>
+                  {"Check your details"}
+                </div>
+              )}
+              <button
+                disabled={isProcessing}
+                type="Submit"
+                className="mt-4 border px-6 py-4 font-bold hover:bg-white hover:text-black"
+              >
+                Let me in
+              </button>
+            </div>
+          </form>
         </Modal>
       </Elements>
     </div>

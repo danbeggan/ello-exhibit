@@ -24,7 +24,7 @@ export const Modal = ({ visible, setVisible, maxWidth, children }) => {
         id="modal"
       >
         <div
-          className={`relative p-8 bg-white w-full m-auto flex-col flex ${
+          className={`relative p-8 w-full m-auto flex-col flex bg-black ${
             maxWidth ? maxWidth : "max-w-md"
           }`}
           ref={modal}
