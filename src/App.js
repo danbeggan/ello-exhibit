@@ -15,11 +15,7 @@ function App() {
         showGallery ? "bg-white" : "bg-landing"
       } bg-center min-h-screen h-full bg-cover text-white flex`}
     >
-      <div
-        className={`w-full h-full ${
-          !showGallery && "bg-black/40"
-        } flex flex-col`}
-      >
+      <div className={`w-full ${!showGallery && "bg-black/40"} flex flex-col`}>
         <Header setShowGallery={setShowGallery} />
         {!showGallery && (
           <main className="max-w-screen-lg mx-auto opacity-100 px-10">
