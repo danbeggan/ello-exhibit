@@ -74,11 +74,11 @@ export const Home = ({ setShowGallery }) => {
       </div> */}
       <div className="py-10 pr-40 flex border-t">
         <div>
-          <div className="uppercase font-bold text-lg">
+          <div className="uppercase font-bold text-3xl">
             FCK 2020 - A celebration of creativity in the face of adversity
           </div>
           <div className="">Curated by: H.P. Baxxter (Scooter)</div>
-          <div className="italic my-5">December 16th - January 31st</div>
+          <div className="italic mt-5 mb-10">December 16th - January 31st</div>
           <div className="italic mt-5">
             Your ticket to an exclusive virtual exhibition curated by H.P.
             Baxxter of Hamburg rave group Scooter featuring the hottest artwork

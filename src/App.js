@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-
-import { Routes, Route, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 import { Header } from "components/Header";
 import { Home } from "Home";
 
 function App() {
   const [showGallery, setShowGallery] = useState(false);
+  useEffect(() => {
+    document.title = "ElloExhibit";
+  }, []);
 
   return (
     <div
