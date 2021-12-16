@@ -89,7 +89,7 @@ export const Home = ({ setShowGallery }) => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center mt-6 border-b pb-10">
         <button
           onClick={() => setVisible(true)}
           className="border px-6 py-4 font-bold hover:bg-white hover:text-black"
